@@ -1,10 +1,8 @@
 name: Deploy to Cloudflare
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,3 +16,4 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          wranglerVersion: "4.107.0"
