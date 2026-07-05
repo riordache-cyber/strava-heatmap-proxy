@@ -227,7 +227,15 @@ async function handleTileProxyRequest(request, event) {
   }
 
   let [_, kind, color, activity, z, x, y, res] = match;
-z = Math.min(parseInt(z), 15).toString();
+const MAX_ZOOM = 15;
+z = parseInt(z);
+if (z > MAX_ZOOM) {
+  const factor = Math.pow(2, z - MAX_ZOOM);
+  x = Math.floor(parseInt(x) / factor).toString();
+  y = Math.floor(parseInt(y) / factor).toString();
+  z = MAX_ZOOM;
+}
+z = z.toString();
   const data = {
     strava_id: Env.STRAVA_ID,
     color,
