@@ -226,7 +226,8 @@ async function handleTileProxyRequest(request, event) {
     }
   }
 
-  const [_, kind, color, activity, z, x, y, res] = match;
+  let [_, kind, color, activity, z, x, y, res] = match;
+z = Math.min(parseInt(z), 15).toString();
   const data = {
     strava_id: Env.STRAVA_ID,
     color,
