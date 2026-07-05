@@ -9,7 +9,7 @@ Note: you **will** need to be a Strava premium subscriber to use the personal
 heatmap, while the global heatmaps are available to all Strava accounts.
 Personal use only, please. Strava will ratelimit you.
 
-# Usage
+# Usage 
 
 If you want to use these heatmaps as a tile layer in another app, here are the
 template URLs to use:
